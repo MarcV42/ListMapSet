@@ -6,11 +6,22 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-        Set<Student> stundents = new HashSet<>();
-        stundents.add(new Student("a1234", "Alice"));
-        stundents.add(new Student("a1234", "Alice"));
 
-        System.out.println(stundents);
+        // Erstellen einer HashMap für Studenten
+        Map<String, Student> studentsMap = new HashMap<>();
+
+        // Hinzufügen von Studenten zur HashMap
+        Student student1 = new Student("a1234", "Alice");
+        Student student2 = new Student("b5678", "Bob");
+
+        studentsMap.put(student1.getId(), student1);
+        studentsMap.put(student2.getId(), student2);
+
+
+        // Ausgabe der Studenten in der HashMap
+        for (Map.Entry<String, Student> entry : studentsMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
 
     }
 
@@ -45,7 +56,13 @@ public class Main {
 
         map.remove("Franzi");
         System.out.println(map);
+    }
 
+    public static void ausgelagert2(){
+        Set<Student> stundents = new HashSet<>();
+        stundents.add(new Student("a1234", "Alice"));
+        stundents.add(new Student("a1234", "Alice"));
 
+        System.out.println(stundents);
     }
 }
